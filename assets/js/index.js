@@ -18,10 +18,10 @@ function getUserInof() {
     $.ajax({
         url: '/my/userinfo',
         headers: {
-            // Authorization: localStorage.getItem('token') || ''
+            Authorization: localStorage.getItem('token') || ''
         },
         success: (res) => {
-            console.log(res);
+            // console.log(res);
             if (res.status != 0) {
                 return layui.layer.msg(res.message, { icon: 5 })
             }
@@ -31,8 +31,8 @@ function getUserInof() {
 }
 
 function renderAvatar(user) {
-    console.log(user)
-        // 渲染用户名，如果有昵称以昵称为准
+    // console.log(user)
+    // 渲染用户名，如果有昵称以昵称为准
     let name = user.nickname || user.username;
     $('#welcome').html('欢迎&nbsp;&nbsp;' + name);
     // 判断图片头像是否存在

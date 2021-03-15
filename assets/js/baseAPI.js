@@ -4,8 +4,8 @@ let baseURL = "http://api-breakingnews-web.itheima.net"
 
 // 拦截所有的ajax请求
 $.ajaxPrefilter(function(options) {
-    console.log(options);
-    console.log(options.url);
+    // console.log(options);
+    // console.log(options.url);
 
 
     // 拼接对应的环境的服务器地址
@@ -19,8 +19,8 @@ $.ajaxPrefilter(function(options) {
     }
 
     options.complete = function(res) {
-        console.log(res.responseJSON)
-        console.log(res);
+        // console.log(res.responseJSON)
+        // console.log(res);
 
         let obj = res.responseJSON;
         if (obj.status == 1 && obj.message == '身份认证失败！') {
